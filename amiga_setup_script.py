@@ -58,7 +58,7 @@ print(
 print()
 
 # original folders (for RetroPie)
-base_folder = "home/pi/RetroPie/"
+base_folder = "/home/pi/RetroPie/"
 bios_folder = base_folder + "BIOS/"
 roms_folder = base_folder + "roms/"
 retropie_folder = base_folder + "retropiemenu/"
@@ -70,33 +70,32 @@ if platform.system() == "Darwin":
     bios_folder = "/Volumes/bios/"
     retropie_folder = ""
 
-
 #check for BIOS sub folder
 
-    if os.path.isdir(bios_folder) == True and bios_folder !="":
-        print ("Installing Amiga Kickstart (BIOS) files...")
-        print()
+if os.path.isdir(bios_folder) == True and bios_folder !="":
+    print ("Installing Amiga Kickstart (BIOS) files...")
+    print()
 
-        #create folder
-        os.makedirs(bios_folder + "Amiga/", exist_ok=True)
+    #create folder
+    os.makedirs(bios_folder + "Amiga/", exist_ok=True)
 
-        # lets download these kickstarts... 
+    # lets download these kickstarts... 
         
-        if os.path.isdir(bios_folder + "Amiga/") == True:
+    if os.path.isdir(bios_folder + "Amiga/") == True:
             
-            rom_source = "http://amigas.ru/amiftp/index.php?dir=AmiFTP/Amiga%20Kickstart%20Roms%20-%20Complete%20-%20TOSEC%20v0.04/KS-ROMs/&file="
+        rom_source = "http://amigas.ru/amiftp/index.php?dir=AmiFTP/Amiga%20Kickstart%20Roms%20-%20Complete%20-%20TOSEC%20v0.04/KS-ROMs/&file="
 
-            rom_file = "Kickstart%20v1.3%20rev%2034.5%20%281987%29%28Commodore%29%28A500-A1000-A2000-CDTV%29.rom"
-            download_file(rom_source + rom_file,bios_folder + "Amiga/kick13.rom")
+        rom_file = "Kickstart%20v1.3%20rev%2034.5%20%281987%29%28Commodore%29%28A500-A1000-A2000-CDTV%29.rom"
+        download_file(rom_source + rom_file,bios_folder + "Amiga/kick13.rom")
         
-            rom_file = "Kickstart%20v3.1%20rev%2040.68%20%281993%29%28Commodore%29%28A1200%29.rom"
-            download_file(rom_source + rom_file,bios_folder + "Amiga/kick31.rom")
+        rom_file = "Kickstart%20v3.1%20rev%2040.68%20%281993%29%28Commodore%29%28A1200%29.rom"
+        download_file(rom_source + rom_file,bios_folder + "Amiga/kick31.rom")
 
-            rom_file = "Kickstart%20v3.1%20rev%2040.60%20%281993%29%28Commodore%29%28CD32%29.rom"
-            download_file(rom_source + rom_file,bios_folder + "Amiga/cd32kick31.rom")
+        rom_file = "Kickstart%20v3.1%20rev%2040.60%20%281993%29%28Commodore%29%28CD32%29.rom"
+        download_file(rom_source + rom_file,bios_folder + "Amiga/cd32kick31.rom")
 
-            rom_file = "CD32%20Extended-ROM%20rev%2040.60%20%281993%29%28Commodore%29%28CD32%29.rom"
-            download_file(rom_source + rom_file,bios_folder + "Amiga/cd32ext.rom")
+        rom_file = "CD32%20Extended-ROM%20rev%2040.60%20%281993%29%28Commodore%29%28CD32%29.rom"
+        download_file(rom_source + rom_file,bios_folder + "Amiga/cd32ext.rom")
 
     else:
         print ("Could not install Amiga Kickstart (BIOS) files... (no BIOS folder)")
@@ -106,7 +105,7 @@ if platform.system() == "Darwin":
 
 # check for amiga-data folder
 
-    if os.path.isdir(roms_folder) == True and roms_folder !="":
+if os.path.isdir(roms_folder) == True and roms_folder !="":
         
         #create folder
         os.makedirs(roms_folder + "amiga/", exist_ok=True)
@@ -175,23 +174,27 @@ if platform.system() == "Darwin":
             download_install_game(data_source+data_file,roms_folder + "amiga-data/",game_name)
             download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
-    else:
+        print("")
+
+else:
         print ("Could not install Amiga Game data or WHD Booter files... (no ROMS folder)")
-    print("")
+        print("")
 
 
 
 # check for scripting
 
-    if os.path.isdir(retropie_folder) == True and retropie_folder !="":
+if os.path.isdir(retropie_folder) == True and retropie_folder !="":
         print ("Installing UAE Config Maker script...")
         print("")
 
         data_source = "http://www.ultimateamiga.co.uk/HostedProjects/RetroPieAmiga/downloads/"
         data_file = "UAE Config Maker.sh"
             
-        download_file(data_source + data_file,retropiefolder + data_file)
+        download_file(data_source + data_file,retropie_folder + data_file)
         print ("Installed.")
-    else:
+        print("")
+
+else:
         print ("Could not install UAE Config Maker script... (no RetroPie Menu folder)")
-    print("")
+        print("")
