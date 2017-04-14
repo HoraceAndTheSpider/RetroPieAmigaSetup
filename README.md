@@ -19,7 +19,7 @@ chmod +x "Auto-Amiga Install.sh"
 
 To remove the script, use the following
 ```
-rm /home/pi/RetroPie/retropiemenu/amiga_install.sh
+rm "/home/pi/RetroPie/retropiemenu/Auto-Amiga Install.sh"
 ```
 
 ## Running:
