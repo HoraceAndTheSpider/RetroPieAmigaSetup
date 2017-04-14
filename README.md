@@ -9,7 +9,8 @@ This is part of the Amiga WHDLoad for RetroPie project hosted here: ****
 
 From Linux Command Line or via SSH, use the following:
 
-```cd /home/pi/RetroPie/retropiemenu/ 
+```
+cd /home/pi/RetroPie/retropiemenu/ 
 wget http://www.ultimateamiga.co.uk/HostedProjects/RetroPieAmiga/downloads/Auto-Amiga%20Install.sh 
 chmod +x "Auto-Amiga Install.sh"
 ```
@@ -17,7 +18,7 @@ chmod +x "Auto-Amiga Install.sh"
 ## Un-install / Removal:
 
 To remove the script, use the following
-```cd /home/pi/RetroPie/retropiemenu/
+```
 rm /home/pi/RetroPie/retropiemenu/amiga_install.sh
 ```
 
