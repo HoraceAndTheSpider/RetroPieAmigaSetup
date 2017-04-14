@@ -2,7 +2,7 @@
 
 This is a simple script to set-up base folders and files on RetroPie for Amiga WHDload gaming, including downloading the WHDLoad Booter and some example games. 
 
-This is part of the Amiga WHDLoad for RetroPie project hosted here: http://tinyurl.com/RetroPieAmiga
+This is part of the Amiga WHDLoad for RetroPie project hosted here: ****
 
 
 ## Installation / Setup:
