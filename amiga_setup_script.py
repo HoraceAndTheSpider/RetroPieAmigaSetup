@@ -154,25 +154,56 @@ if os.path.isdir(roms_folder) == True and roms_folder !="":
             else:
                 print("Could not download WHDLoad Booter files.")
             print()
+            
+    # create sub-folders
+            print ("Creating WHDLoad data sub-folders...")
+            print()
+            os.makedirs(roms_folder + "amiga-data/Games_WHDLoad", exist_ok=True)
+            os.makedirs(roms_folder + "amiga-data/Games_WHDLoad_AGA", exist_ok=True)
+            os.makedirs(roms_folder + "amiga-data/Games_WHDLoad_CDTV", exist_ok=True)
+            os.makedirs(roms_folder + "amiga-data/Games_WHDLoad_CD32", exist_ok=True)
+            os.makedirs(roms_folder + "amiga-data/Games_WHDLoad_DemoVersions", exist_ok=True)
+            os.makedirs(roms_folder + "amiga-data/Games_WHDLoad_Unofficial", exist_ok=True)
 
+            os.makedirs(roms_folder + "amiga-data/Games_WHDLoad_HDF", exist_ok=True)
+            os.makedirs(roms_folder + "amiga-data/Games_WHDLoad_HDF_AGA", exist_ok=True)
+            os.makedirs(roms_folder + "amiga-data/Games_WHDLoad_HDF_CDTV", exist_ok=True)
+            os.makedirs(roms_folder + "amiga-data/Games_WHDLoad_HDF_DemoVersions", exist_ok=True)
+            os.makedirs(roms_folder + "amiga-data/Games_WHDLoad_HDF_AltLanguage", exist_ok=True)
+            
+            os.makedirs(roms_folder + "amiga-data/Games_CD32", exist_ok=True)
+            
     # get some example games
             data_file = "Cybernoid_v1.3_1088.zip"
             game_name = "Cybernoid - The Fighting Machine"
             
-            download_install_game(data_source+data_file,roms_folder + "amiga-data/",game_name)
+            download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
             download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
             
             data_file = "SensibleWorldOfSoccer9697_v1.7_0842.zip"
             game_name = "Sensible World of Soccer 96-97"
             
-            download_install_game(data_source+data_file,roms_folder + "amiga-data/",game_name)
+            download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
             download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
             
             data_file = "SuperCars2_v1.0_0224.zip"
             game_name = "Super Cars 2"
             
-            download_install_game(data_source+data_file,roms_folder + "amiga-data/",game_name)
+            download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
             download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
+
+            data_file = "AlienBreedTowerAssault_v1.2_AGA_0279.zip"
+            game_name = "Alien Breed Tower Assault [AGA]"
+            
+            download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad_AGA/",game_name)
+            download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
+
+            data_file = "Xenon2_v1.9_1Disk_2234.zip"
+            game_name = "Xenon 2 (1 Disk)"
+            
+            download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
+            download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
+
 
         print("")
 
