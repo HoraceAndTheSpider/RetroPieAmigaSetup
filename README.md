@@ -10,7 +10,7 @@ This is part of the Amiga WHDLoad for RetroPie project hosted here: ****
 From Linux Command Line or via SSH, use the following:
 
 ```cd /home/pi/RetroPie/retropiemenu/ 
-wget http://www.ultimateamiga.co.uk/HostedProjects/RetroPieAmiga/downloads/Auto-Amiga%20Install.sh.sh 
+wget http://www.ultimateamiga.co.uk/HostedProjects/RetroPieAmiga/downloads/Auto-Amiga%20Install.sh 
 chmod +x "Auto-Amiga Install.sh"
 ```
 
