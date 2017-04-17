@@ -26,3 +26,9 @@ rm "/home/pi/RetroPie/retropiemenu/Auto-Amiga Install.sh"
 Once installed, simply go to the RetroPie menu, where you will find the option `Auto-Amiga Install`, simply click to run!
 
 You will need to restart RetroPie for the installation to complete, and it is recommended you use this with the Amiberry emulator, which is available in the optional packages in the RetroPie setup.
+
+If you insist on running directly from command line you must use:
+
+```
+sudo ./"RetroPie/retropiemenu/Auto-Amiga Install.sh"
+```
