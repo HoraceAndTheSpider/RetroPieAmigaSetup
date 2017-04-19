@@ -85,6 +85,9 @@ if os.path.isdir(bios_folder) == True and bios_folder !="":
             
         rom_source = "http://amigas.ru/amiftp/index.php?dir=AmiFTP/Amiga%20Kickstart%20Roms%20-%20Complete%20-%20TOSEC%20v0.04/KS-ROMs/&file="
 
+        rom_file = "Kickstart%20v1.2%20rev%2033.180%20%281986%29%28Commodore%29%28A500-A1000-A2000%29.rom"
+        download_file(rom_source + rom_file,bios_folder + "Amiga/kick12.rom")
+
         rom_file = "Kickstart%20v1.3%20rev%2034.5%20%281987%29%28Commodore%29%28A500-A1000-A2000-CDTV%29.rom"
         download_file(rom_source + rom_file,bios_folder + "Amiga/kick13.rom")
         
@@ -97,6 +100,8 @@ if os.path.isdir(bios_folder) == True and bios_folder !="":
         rom_file = "CD32%20Extended-ROM%20rev%2040.60%20%281993%29%28Commodore%29%28CD32%29.rom"
         download_file(rom_source + rom_file,bios_folder + "Amiga/cd32ext.rom")
 
+     
+        
     else:
         print ("Could not install Amiga Kickstart (BIOS) files... (no BIOS folder)")
     print()
