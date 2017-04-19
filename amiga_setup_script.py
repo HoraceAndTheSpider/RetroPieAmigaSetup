@@ -131,7 +131,7 @@ if os.path.isdir(roms_folder) == True and roms_folder !="":
 
         
             # unzip the file, and then remove
-            if os.path.isfile(roms_folder + "amiga-data/WHDLoad_Booter.zip") == True:
+            if os.path.isfile(roms_folder + "amiga-data/WHDLoad_Booter_kicks.zip") == True:
 
                 # check for BootWHD, if already exists... remove!
                 if os.path.isdir(roms_folder + "amiga-data/_BootWHD/") == True:
