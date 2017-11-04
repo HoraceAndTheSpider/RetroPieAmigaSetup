@@ -10,8 +10,9 @@ This is part of the Amiga WHDLoad for RetroPie project hosted here: ****
 From Linux Command Line or via SSH, use the following:
 
 ```
-cd /home/pi/RetroPie/retropiemenu/ 
-wget http://www.ultimateamiga.co.uk/HostedProjects/RetroPieAmiga/downloads/Auto-Amiga%20Install.sh 
+cd ~/RetroPie/retropiemenu/
+rm "Auto-Amiga Install.sh"
+wget https://raw.githubusercontent.com/HoraceAndTheSpider/RetroPieAmigaSetup/master/Auto-Amiga%20Install.sh
 chmod +x "Auto-Amiga Install.sh"
 ```
 
@@ -19,7 +20,7 @@ chmod +x "Auto-Amiga Install.sh"
 
 To remove the script, use the following
 ```
-rm "/home/pi/RetroPie/retropiemenu/Auto-Amiga Install.sh"
+rm "~/RetroPie/retropiemenu/Auto-Amiga Install.sh"
 ```
 
 ## Running:
@@ -30,5 +31,6 @@ You will need to restart RetroPie for the installation to complete, and it is re
 If you insist on running directly from command line you must use:
 
 ```
-sudo ./"RetroPie/retropiemenu/Auto-Amiga Install.sh"
+cd ~/RetroPie/
+sudo ./"retropiemenu/Auto-Amiga Install.sh"
 ```
