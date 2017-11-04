@@ -6,6 +6,7 @@ import urllib.request
 import zipfile
 import shutil
 import glob
+import argparse
 
 from utils import general_utils
 from utils import text_utils
@@ -53,22 +54,37 @@ def download_install_game(download_name,output_location,game_name = "Amiga Game"
 print()
 print(
     FontColours.BOLD + FontColours.OKBLUE + "HoraceAndTheSpider" + FontColours.ENDC + "'s " + FontColours.BOLD +
-    "RetroPie Amiga Setup Script" + FontColours.ENDC + FontColours.OKGREEN + " (v0.5)" + FontColours.ENDC + " | " + "" +
+    "RetroPie Amiga Setup Script" + FontColours.ENDC + FontColours.OKGREEN + " (v0.6)" + FontColours.ENDC + " | " + "" +
     FontColours.FAIL + "www.ultimateamiga.co.uk" + FontColours.ENDC)
 print()
 
+# Initialisations
+# Setup Commandline Argument Parsing
+
+parser = argparse.ArgumentParser(description='Auto-Install Amiga files for RetroPie.')
+parser.add_argument('--retropie-path',          # command line argument
+                    default='~/RetroPie/',# Default directory if none supplied
+                    help="Optional RetroPie path"
+                    )
+
+# Parse all command line arguments
+args = parser.parse_args()
+
 # original folders (for RetroPie)
-base_folder = "/home/pi/RetroPie/"
-bios_folder = base_folder + "BIOS/"
+base_folder = args.retropie_path
+bios_folder = base_folder + "bios/"
 roms_folder = base_folder + "roms/"
 retropie_folder = base_folder + "retropiemenu/"
 
 
 # Dom's special directory override :P
 if platform.system() == "Darwin":
-    roms_folder = "/Volumes/roms-1/"
+    roms_folder = "/Volumes/roms/"
     bios_folder = "/Volumes/bios/"
     retropie_folder = ""
+else:
+    base_folder = general_utils.check_inputdirs([base_folder])
+    
 
 #check for BIOS sub folder
 
@@ -100,8 +116,6 @@ if os.path.isdir(bios_folder) == True and bios_folder !="":
         rom_file = "CD32%20Extended-ROM%20rev%2040.60%20%281993%29%28Commodore%29%28CD32%29.rom"
         download_file(rom_source + rom_file,bios_folder + "Amiga/cd32ext.rom")
 
-     
-        
     else:
         print ("Could not install Amiga Kickstart (BIOS) files... (no BIOS folder)")
     print()
