@@ -63,7 +63,7 @@ print()
 
 parser = argparse.ArgumentParser(description='Auto-Install Amiga files for RetroPie.')
 parser.add_argument('--retropie-path',          # command line argument
-                    default='~/RetroPie/',# Default directory if none supplied
+                    default=os.path.expanduser('~/RetroPie'),# Default directory if none supplied                    
                     help="Optional RetroPie path"
                     )
 
