@@ -32,5 +32,5 @@ If you insist on running directly from command line you must use:
 
 ```
 cd ~/RetroPie/
-sudo ./"retropiemenu/Auto-Amiga Install.sh"
+./"retropiemenu/Auto-Amiga Install.sh"
 ```
