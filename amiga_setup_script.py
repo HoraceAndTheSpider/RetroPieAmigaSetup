@@ -238,8 +238,8 @@ if os.path.isdir(retropie_folder) == True and retropie_folder !="":
         print ("Installing UAE Config Maker script...")
         print("")
 
-        data_source = "http://www.ultimateamiga.co.uk/HostedProjects/RetroPieAmiga/downloads/"
-        data_file = "UAE Config Maker.sh"
+        data_source = "https://raw.githubusercontent.com/HoraceAndTheSpider/UAEConfigMaker/master/"
+        data_file = "UAE%20Config%20Maker.sh"
             
         download_file(data_source + data_file,retropie_folder + data_file)
         print ("Installed.")
