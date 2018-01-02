@@ -110,6 +110,12 @@ if os.path.isdir(bios_folder) == True and bios_folder !="":
         rom_file = "Kickstart%20v3.1%20rev%2040.68%20%281993%29%28Commodore%29%28A1200%29.rom"
         download_file(rom_source + rom_file,bios_folder + "Amiga/kick31.rom")
 
+        rom_file = "Kickstart%20v3.1%20rev%2040.63%20%281993%29%28Commodore%29%28A500-A600-A2000%29.rom"
+        download_file(rom_source + rom_file,bios_folder + "Amiga/a600kick31.rom")
+
+        rom_file = "Kickstart%20v2.05%20rev%2037.300%20%281991%29%28Commodore%29%28A600HD%29.rom"
+        download_file(rom_source + rom_file,bios_folder + "Amiga/kick25.rom")
+
         rom_file = "Kickstart%20v3.1%20rev%2040.60%20%281993%29%28Commodore%29%28CD32%29.rom"
         download_file(rom_source + rom_file,bios_folder + "Amiga/cd32kick31.rom")
 
