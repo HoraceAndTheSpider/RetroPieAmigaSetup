@@ -204,35 +204,35 @@ if os.path.isdir(roms_folder) == True and roms_folder !="":
             data_file = "Cybernoid_v1.3_1088.zip"
             game_name = "Cybernoid - The Fighting Machine"
 
-            if os.path.isfolder(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:           
+            if os.path.isdir(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:           
                 download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
             
             data_file = "SensibleWorldOfSoccer9697_v1.7_0842.zip"
             game_name = "Sensible World of Soccer 96-97"
             
-            if os.path.isfolder(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:           
+            if os.path.isdir(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:           
                 download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
             data_file = "SuperCars2_v1.0_0224.zip"
             game_name = "Super Cars 2"
 
-            if os.path.isfolder(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:           
+            if os.path.isdir(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:           
                 download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
             data_file = "AlienBreedTowerAssault_v1.2_AGA_0279.zip"
             game_name = "Alien Breed Tower Assault [AGA]"
 
-            if os.path.isfolder(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:                       
+            if os.path.isdir(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:                       
                 download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad_AGA/",game_name)
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
             data_file = "Xenon2_v1.9_1Disk_2234.zip"
             game_name = "Xenon 2 (1 Disk)"
 
-            if os.path.isfolder(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:           
+            if os.path.isdir(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:           
                 download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
