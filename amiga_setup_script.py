@@ -20,6 +20,8 @@ def download_file(get_file,put_file):
         return
     
     try:
+        get_file = urllib.parse.quote(get_file)
+        get_file = str.replace(get_file,"https%3A","https:")
         urllib.request.urlretrieve(get_file, put_file)
         print("File downloaded: " + FontColours.OKGREEN + put_file + FontColours.ENDC + ".")
     except:
@@ -72,7 +74,7 @@ args = parser.parse_args()
 
 # original folders (for RetroPie)
 base_folder = args.retropie_path
-bios_folder = base_folder + "bios/"
+bios_folder = base_folder + "BIOS/"
 roms_folder = base_folder + "roms/"
 retropie_folder = base_folder + "retropiemenu/"
 
@@ -201,33 +203,38 @@ if os.path.isdir(roms_folder) == True and roms_folder !="":
     # get some example games
             data_file = "Cybernoid_v1.3_1088.zip"
             game_name = "Cybernoid - The Fighting Machine"
-            
-            download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
-            download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
+
+            if os.path.isfolder(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:           
+                download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
+                download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
             
             data_file = "SensibleWorldOfSoccer9697_v1.7_0842.zip"
             game_name = "Sensible World of Soccer 96-97"
             
-            download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
-            download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
-            
+            if os.path.isfolder(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:           
+                download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
+                download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
+
             data_file = "SuperCars2_v1.0_0224.zip"
             game_name = "Super Cars 2"
-            
-            download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
-            download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
+
+            if os.path.isfolder(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:           
+                download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
+                download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
             data_file = "AlienBreedTowerAssault_v1.2_AGA_0279.zip"
             game_name = "Alien Breed Tower Assault [AGA]"
-            
-            download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad_AGA/",game_name)
-            download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
+
+            if os.path.isfolder(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:                       
+                download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad_AGA/",game_name)
+                download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
             data_file = "Xenon2_v1.9_1Disk_2234.zip"
             game_name = "Xenon 2 (1 Disk)"
-            
-            download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
-            download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
+
+            if os.path.isfolder(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:           
+                download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
+                download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
 
         print("")
@@ -245,7 +252,7 @@ if os.path.isdir(retropie_folder) == True and retropie_folder !="":
         print("")
 
         data_source = "https://raw.githubusercontent.com/HoraceAndTheSpider/UAEConfigMaker/master/"
-        data_file = "UAE%20Config%20Maker.sh"
+        data_file = "UAE Config Maker.sh"
             
         download_file(data_source + data_file,retropie_folder + data_file)
         print ("Installed.")
