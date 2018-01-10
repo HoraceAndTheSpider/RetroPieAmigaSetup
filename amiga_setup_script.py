@@ -15,13 +15,14 @@ from utils.text_utils import FontColours
 
 def download_file(get_file,put_file):
 
+    get_file = urllib.parse.quote(get_file)
+    get_file = str.replace(get_file,"https%3A","https:")
+        
     if os.path.isfile(put_file) == True:
         print("File: " + FontColours.OKBLUE + put_file + FontColours.ENDC + " already exists.")
         return
     
     try:
-        get_file = urllib.parse.quote(get_file)
-        get_file = str.replace(get_file,"https%3A","https:")
         urllib.request.urlretrieve(get_file, put_file)
         print("File downloaded: " + FontColours.OKGREEN + put_file + FontColours.ENDC + ".")
     except:
@@ -101,27 +102,27 @@ if os.path.isdir(bios_folder) == True and bios_folder !="":
         
     if os.path.isdir(bios_folder + "Amiga/") == True:
             
-        rom_source = "http://amigas.ru/amiftp/index.php?dir=AmiFTP/Amiga%20Kickstart%20Roms%20-%20Complete%20-%20TOSEC%20v0.04/KS-ROMs/&file="
+        rom_source = "http://amigas.ru/amiftp/index.php?dir=AmiFTP/Amiga Kickstart Roms - Complete -TOSEC v0.04/KS-ROMs/&file="
 
-        rom_file = "Kickstart%20v1.2%20rev%2033.180%20%281986%29%28Commodore%29%28A500-A1000-A2000%29.rom"
+        rom_file = "Kickstart v1.2 rev 33.166 (1986)(Commodore)(A1000).rom"
         download_file(rom_source + rom_file,bios_folder + "Amiga/kick12.rom")
 
-        rom_file = "Kickstart%20v1.3%20rev%2034.5%20%281987%29%28Commodore%29%28A500-A1000-A2000-CDTV%29.rom"
+        rom_file = "Kickstart v1.3 rev 34.5 (1987)(Commodore)(A500-A1000-A2000-CDTV).rom "
         download_file(rom_source + rom_file,bios_folder + "Amiga/kick13.rom")
         
-        rom_file = "Kickstart%20v3.1%20rev%2040.68%20%281993%29%28Commodore%29%28A1200%29.rom"
+        rom_file = "Kickstart v3.1 rev 40.68 (1993)(Commodore)(A1200).rom"
         download_file(rom_source + rom_file,bios_folder + "Amiga/kick31.rom")
 
-        rom_file = "Kickstart%20v3.1%20rev%2040.63%20%281993%29%28Commodore%29%28A500-A600-A2000%29.rom"
+        rom_file = "Kickstart v3.1 rev 40.63 (1993)(Commodore)(A500-A600-A2000).rom"
         download_file(rom_source + rom_file,bios_folder + "Amiga/a600kick31.rom")
 
-        rom_file = "Kickstart%20v2.05%20rev%2037.300%20%281991%29%28Commodore%29%28A600HD%29.rom"
+        rom_file = "Kickstart v2.05 rev 37.300 (1991)(Commodore)(A600HD).rom"
         download_file(rom_source + rom_file,bios_folder + "Amiga/kick25.rom")
 
-        rom_file = "Kickstart%20v3.1%20rev%2040.60%20%281993%29%28Commodore%29%28CD32%29.rom"
+        rom_file = "Kickstart v3.1 rev 40.60 (1993)(Commodore)(CD32).rom"
         download_file(rom_source + rom_file,bios_folder + "Amiga/cd32kick31.rom")
 
-        rom_file = "CD32%20Extended-ROM%20rev%2040.60%20%281993%29%28Commodore%29%28CD32%29.rom"
+        rom_file = "CD32 Extended-ROM rev 40.60 (1993)(Commodore)(CD32).rom"
         download_file(rom_source + rom_file,bios_folder + "Amiga/cd32ext.rom")
 
     else:
@@ -204,35 +205,35 @@ if os.path.isdir(roms_folder) == True and roms_folder !="":
             data_file = "Cybernoid_v1.3_1088.zip"
             game_name = "Cybernoid - The Fighting Machine"
 
-            if os.path.isdir(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:           
+            if os.path.isfile(roms_folder + "amiga/" + game_name + ".uae") == False:
                 download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
             
             data_file = "SensibleWorldOfSoccer9697_v1.7_0842.zip"
             game_name = "Sensible World of Soccer 96-97"
             
-            if os.path.isdir(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:           
+            if os.path.isfile(roms_folder + "amiga/" + game_name + ".uae") == False:          
                 download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
             data_file = "SuperCars2_v1.0_0224.zip"
             game_name = "Super Cars 2"
 
-            if os.path.isdir(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:           
+            if os.path.isfile(roms_folder + "amiga/" + game_name + ".uae") == False:          
                 download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
             data_file = "AlienBreedTowerAssault_v1.2_AGA_0279.zip"
             game_name = "Alien Breed Tower Assault [AGA]"
 
-            if os.path.isdir(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:                       
+            if os.path.isfile(roms_folder + "amiga/" + game_name + ".uae") == False:                      
                 download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad_AGA/",game_name)
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
             data_file = "Xenon2_v1.9_1Disk_2234.zip"
             game_name = "Xenon 2 (1 Disk)"
 
-            if os.path.isdir(roms_folder + "amiga-data/Games_WHDLoad/" + game_name) == False:           
+            if os.path.isfile(roms_folder + "amiga/" + game_name + ".uae") == False:          
                 download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
