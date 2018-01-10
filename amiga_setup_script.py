@@ -17,7 +17,11 @@ def download_file(get_file,put_file):
 
     get_file = urllib.parse.quote(get_file)
     get_file = str.replace(get_file,"https%3A","https:")
-        
+    get_file = str.replace(get_file,"http%3A","http:")
+    get_file = str.replace(get_file,"%3F","?")
+    get_file = str.replace(get_file,"%3D","=")
+    get_file = str.replace(get_file,"%26","&")
+
     if os.path.isfile(put_file) == True:
         print("File: " + FontColours.OKBLUE + put_file + FontColours.ENDC + " already exists.")
         return
@@ -107,7 +111,7 @@ if os.path.isdir(bios_folder) == True and bios_folder !="":
         rom_file = "Kickstart v1.2 rev 33.166 (1986)(Commodore)(A1000).rom"
         download_file(rom_source + rom_file,bios_folder + "Amiga/kick12.rom")
 
-        rom_file = "Kickstart v1.3 rev 34.5 (1987)(Commodore)(A500-A1000-A2000-CDTV).rom "
+        rom_file = "Kickstart v1.3 rev 34.5 (1987)(Commodore)(A500-A1000-A2000-CDTV).rom"
         download_file(rom_source + rom_file,bios_folder + "Amiga/kick13.rom")
         
         rom_file = "Kickstart v3.1 rev 40.68 (1993)(Commodore)(A1200).rom"
