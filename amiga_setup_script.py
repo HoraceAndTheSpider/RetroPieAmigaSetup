@@ -31,6 +31,7 @@ def download_file(get_file,put_file):
     get_file = str.replace(get_file,"%3D","=")
     get_file = str.replace(get_file,"%26","&")
 
+    print (get_file)
     if os.path.isfile(put_file) == True:
         print("File: " + FontColours.OKBLUE + put_file + FontColours.ENDC + " already exists.")
         return
@@ -118,7 +119,6 @@ if os.path.isdir(bios_folder) == True and bios_folder !="":
         rom_source = "http://amigas.ru/amiftp/index.php?dir=AmiFTP/Amiga Kickstart Roms - Complete -TOSEC v0.04/KS-ROMs/&file="
 
         rom_file = "Kickstart v1.2 rev 33.166 (1986)(Commodore)(A1000).rom"
-        print (rom_source + rom_file)
         download_file(rom_source + rom_file,bios_folder + "Amiga/kick12.rom")
         print (bios_folder + "Amiga/kick12.rom")
 
