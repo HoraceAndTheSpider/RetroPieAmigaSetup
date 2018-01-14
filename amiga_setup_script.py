@@ -39,6 +39,8 @@ def download_file(get_file,put_file):
         urllib.request.urlretrieve(get_file, put_file)
         print("File downloaded: " + FontColours.OKGREEN + get_file + FontColours.ENDC + ".")
         fix_ownership(get_file)
+        print()
+        return
     except:
         print("File download failed: " + FontColours.FAIL + get_file + FontColours.ENDC + ". (URL not found)")
 
