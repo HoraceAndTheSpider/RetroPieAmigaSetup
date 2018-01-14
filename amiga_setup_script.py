@@ -31,7 +31,6 @@ def download_file(get_file,put_file):
     get_file = str.replace(get_file,"%3D","=")
     get_file = str.replace(get_file,"%26","&")
 
-    print (get_file)
     if os.path.isfile(put_file) == True:
         print("File: " + FontColours.OKBLUE + put_file + FontColours.ENDC + " already exists.")
         return
@@ -39,6 +38,7 @@ def download_file(get_file,put_file):
     try:
         urllib.request.urlretrieve(get_file, put_file)
         print("File downloaded: " + FontColours.OKGREEN + put_file + FontColours.ENDC + ".")
+        fix_ownership(get_file)
     except:
         print("File download failed: " + FontColours.FAIL + put_file + FontColours.ENDC + ". (URL not found)")
 
@@ -118,27 +118,33 @@ if os.path.isdir(bios_folder) == True and bios_folder !="":
             
         rom_source = "http://amigas.ru/amiftp/index.php?dir=AmiFTP/Amiga Kickstart Roms - Complete - TOSEC v0.04/KS-ROMs/&file="
 
-        rom_file = "Kickstart v1.2 rev 33.166 (1986)(Commodore)(A1000).rom"
-        download_file(rom_source + rom_file,bios_folder + "Amiga/kick12.rom")
-        print (bios_folder + "Amiga/kick12.rom")
+        if os.path.isfile(bios_folder + "Amiga/kick12.rom") == false:
+            rom_file = "Kickstart v1.2 rev 33.166 (1986)(Commodore)(A1000).rom"
+            download_file(rom_source + rom_file,bios_folder + "Amiga/kick12.rom")
 
-        rom_file = "Kickstart v1.3 rev 34.5 (1987)(Commodore)(A500-A1000-A2000-CDTV).rom"
-        download_file(rom_source + rom_file,bios_folder + "Amiga/kick13.rom")
+        if os.path.isfile(bios_folder + "Amiga/kick13.rom") == false:
+            rom_file = "Kickstart v1.3 rev 34.5 (1987)(Commodore)(A500-A1000-A2000-CDTV).rom"
+            download_file(rom_source + rom_file,bios_folder + "Amiga/kick13.rom")
         
-        rom_file = "Kickstart v3.1 rev 40.68 (1993)(Commodore)(A1200).rom"
-        download_file(rom_source + rom_file,bios_folder + "Amiga/kick31.rom")
+        if os.path.isfile(bios_folder + "Amiga/kick31.rom") == false:
+            rom_file = "Kickstart v3.1 rev 40.68 (1993)(Commodore)(A1200).rom"
+            download_file(rom_source + rom_file,bios_folder + "Amiga/kick31.rom")
+            
+        if os.path.isfile(bios_folder + "Amiga/a600kick31.rom") == false:
+            rom_file = "Kickstart v3.1 rev 40.63 (1993)(Commodore)(A500-A600-A2000).rom"
+            download_file(rom_source + rom_file,bios_folder + "Amiga/a600kick31.rom")
 
-        rom_file = "Kickstart v3.1 rev 40.63 (1993)(Commodore)(A500-A600-A2000).rom"
-        download_file(rom_source + rom_file,bios_folder + "Amiga/a600kick31.rom")
+        if os.path.isfile(bios_folder + "Amiga/kick25.rom") == false:
+            rom_file = "Kickstart v2.05 rev 37.300 (1991)(Commodore)(A600HD).rom"
+            download_file(rom_source + rom_file,bios_folder + "Amiga/kick25.rom")
 
-        rom_file = "Kickstart v2.05 rev 37.300 (1991)(Commodore)(A600HD).rom"
-        download_file(rom_source + rom_file,bios_folder + "Amiga/kick25.rom")
+        if os.path.isfile(bios_folder + "Amiga/cd32kick31.rom") == false:
+            rom_file = "Kickstart v3.1 rev 40.60 (1993)(Commodore)(CD32).rom"
+            download_file(rom_source + rom_file,bios_folder + "Amiga/cd32kick31.rom")
 
-        rom_file = "Kickstart v3.1 rev 40.60 (1993)(Commodore)(CD32).rom"
-        download_file(rom_source + rom_file,bios_folder + "Amiga/cd32kick31.rom")
-
-        rom_file = "CD32 Extended-ROM rev 40.60 (1993)(Commodore)(CD32).rom"
-        download_file(rom_source + rom_file,bios_folder + "Amiga/cd32ext.rom")
+        if os.path.isfile(bios_folder + "Amiga/cd32ext.rom") == false:
+            rom_file = "CD32 Extended-ROM rev 40.60 (1993)(Commodore)(CD32).rom"
+            download_file(rom_source + rom_file,bios_folder + "Amiga/cd32ext.rom")
 
     else:
         print ("Could not install Amiga Kickstart (BIOS) files... (no BIOS folder)")
