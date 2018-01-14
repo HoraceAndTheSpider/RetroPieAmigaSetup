@@ -243,14 +243,14 @@ if os.path.isdir(roms_folder) == True and roms_folder !="":
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
             data_file = "RickDangerous25.zip"
-            game_name = "Rick Dangerous 2 1/2"
+            game_name = "Rick Dangerous 2.5"
 
             if os.path.isfile(roms_folder + "amiga/" + game_name + ".uae") == False:          
                 download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad_DemoVersions/",game_name)
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
             data_file = "AlienBreedTowerAssault_v1.2_AGA_0279.zip"
-            game_name = "Alien Breed Tower Assault [AGA]"
+            game_name = "Alien Breed - Tower Assault [AGA]"
 
             if os.path.isfile(roms_folder + "amiga/" + game_name + ".uae") == False:                      
                 download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad_AGA/",game_name)
