@@ -223,25 +223,25 @@ if os.path.isdir(roms_folder) == True and roms_folder !="":
             os.makedirs(roms_folder + "amiga-data/Games_CD32", exist_ok=True)
             
     # get some example games
-            data_file = "Cybernoid_v1.3_1088.zip"
-            game_name = "Cybernoid - The Fighting Machine"
+            data_file = "RType.zip"
+            game_name = "R-Type"
 
             if os.path.isfile(roms_folder + "amiga/" + game_name + ".uae") == False:
                 download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
             
-            data_file = "SensibleWorldOfSoccer9697_v1.7_0842.zip"
-            game_name = "Sensible World of Soccer 96-97"
+            data_file = "PuttySquadAGA.zip"
+            game_name = "Putty Squad [AGA]"
             
             if os.path.isfile(roms_folder + "amiga/" + game_name + ".uae") == False:          
-                download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
+                download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad_AGA/",game_name)
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
-            data_file = "SuperCars2_v1.0_0224.zip"
-            game_name = "Super Cars 2"
+            data_file = "RickDangerous25.zip"
+            game_name = "Rick Dangerous 2 1/2"
 
             if os.path.isfile(roms_folder + "amiga/" + game_name + ".uae") == False:          
-                download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
+                download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad_Demos/",game_name)
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
             data_file = "AlienBreedTowerAssault_v1.2_AGA_0279.zip"
@@ -251,8 +251,8 @@ if os.path.isdir(roms_folder) == True and roms_folder !="":
                 download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad_AGA/",game_name)
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
-            data_file = "Xenon2_v1.9_1Disk_2234.zip"
-            game_name = "Xenon 2 (1 Disk)"
+            data_file = "FlightOfTheAmazonQueen,zip"
+            game_name = "Flight of the Amazon Queen"
 
             if os.path.isfile(roms_folder + "amiga/" + game_name + ".uae") == False:          
                 download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad/",game_name)
