@@ -251,7 +251,7 @@ if os.path.isdir(roms_folder) == True and roms_folder !="":
                 download_install_game(data_source+data_file,roms_folder + "amiga-data/Games_WHDLoad_AGA/",game_name)
                 download_file(data_source + game_name + ".uae",roms_folder + "amiga/" + game_name + ".uae")
 
-            data_file = "FlightOfTheAmazonQueen,zip"
+            data_file = "FlightOfTheAmazonQueen.zip"
             game_name = "Flight of the Amazon Queen"
 
             if os.path.isfile(roms_folder + "amiga/" + game_name + ".uae") == False:          
