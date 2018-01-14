@@ -116,7 +116,7 @@ if os.path.isdir(bios_folder) == True and bios_folder !="":
         
     if os.path.isdir(bios_folder + "Amiga/") == True:
             
-        rom_source = "http://amigas.ru/amiftp/index.php?dir=AmiFTP/Amiga Kickstart Roms - Complete -TOSEC v0.04/KS-ROMs/&file="
+        rom_source = "http://amigas.ru/amiftp/index.php?dir=AmiFTP/Amiga Kickstart Roms - Complete - TOSEC v0.04/KS-ROMs/&file="
 
         rom_file = "Kickstart v1.2 rev 33.166 (1986)(Commodore)(A1000).rom"
         download_file(rom_source + rom_file,bios_folder + "Amiga/kick12.rom")
