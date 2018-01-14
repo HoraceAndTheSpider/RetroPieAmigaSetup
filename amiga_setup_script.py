@@ -21,6 +21,8 @@ def fix_ownership(path):
     gid = os.environ.get('SUDO_GID')
     if uid is not None:
         os.chown(path, int(uid), int(gid))
+
+    return
         
 def download_file(get_file,put_file):
 
@@ -41,6 +43,7 @@ def download_file(get_file,put_file):
         fix_ownership(get_file)
         print()
         return
+    
     except:
         print("File download failed: " + FontColours.FAIL + get_file + FontColours.ENDC + ". (URL not found)")
 
