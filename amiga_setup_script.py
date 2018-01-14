@@ -120,7 +120,7 @@ if os.path.isdir(bios_folder) == True and bios_folder !="":
         rom_file = "Kickstart v1.2 rev 33.166 (1986)(Commodore)(A1000).rom"
         print (rom_source + rom_file)
         download_file(rom_source + rom_file,bios_folder + "Amiga/kick12.rom")
-        print bios_folder + "Amiga/kick12.rom"
+        print (bios_folder + "Amiga/kick12.rom")
 
         rom_file = "Kickstart v1.3 rev 34.5 (1987)(Commodore)(A500-A1000-A2000-CDTV).rom"
         download_file(rom_source + rom_file,bios_folder + "Amiga/kick13.rom")
